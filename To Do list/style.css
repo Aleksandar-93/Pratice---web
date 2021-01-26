@@ -6,4 +6,52 @@
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  height: 100vh;
+}
+
+.contaner {
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: lightslategray;
+  border-radius: 10px;
+}
+
+#myDiv {
+  text-align: center;
+  padding: 2rem;
+}
+#myDiv h2 {
+}
+#myDiv input {
+  height: 35px;
+  width: 75%;
+  border: none;
+  background-color: #fff;
+  border-radius: 5px 0 0 5px;
+}
+#myDiv button {
+  height: 35px;
+  width: 25%;
+  border: none;
+  float: right;
+  background-color: #777;
+  border-radius: 0 5px 5px 0;
+}
+
+#myUl {
+  list-style-type: none;
+  background-color: #eee;
+  margin: 0;
+}
+#myUl li {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 5px 0 5px 0;
+}
+.close {
 }
