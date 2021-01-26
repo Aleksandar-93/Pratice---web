@@ -12,6 +12,8 @@ body {
 }
 
 .contaner {
+  position: relative;
+  top: 100px;
   margin: auto;
   max-width: 800px;
   display: flex;
@@ -33,14 +35,17 @@ body {
   border: none;
   background-color: #fff;
   border-radius: 5px 0 0 5px;
+  outline: none;
+  border: none;
 }
 #myDiv button {
   height: 35px;
   width: 25%;
-  border: none;
   float: right;
   background-color: #777;
   border-radius: 0 5px 5px 0;
+  outline: none;
+  border: none;
 }
 #myDiv button:hover {
   background-color: #999;
@@ -55,7 +60,7 @@ body {
 #myUl li {
   font-weight: bold;
   font-size: 1.2rem;
-  padding: 5px 0 5px 0;
+  padding: 5px 0 5px 25px;
 }
 #myUl li:hover {
   background: #ddd;
