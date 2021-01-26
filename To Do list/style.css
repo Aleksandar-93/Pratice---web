@@ -42,19 +42,36 @@ body {
   background-color: #777;
   border-radius: 0 5px 5px 0;
 }
+#myDiv button:hover {
+  background-color: #999;
+}
 
 #myUl {
   list-style-type: none;
   background-color: #eee;
   margin: 0;
+  padding-left: 0;
 }
 #myUl li {
   font-weight: bold;
   font-size: 1.2rem;
   padding: 5px 0 5px 0;
 }
+#myUl li:hover {
+  background: #ddd;
+}
+
 .close {
   float: right;
-  padding-right: 20px;
-  font-size: 1.5rem;
+  margin-right: 20px;
+  font-size: 1.2rem;
+  width: 35px;
+  text-align: center;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+#myUl li.checked {
+  background: #888;
+  text-decoration: line-through;
 }

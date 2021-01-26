@@ -19,6 +19,12 @@ for(let i = 0; i < myList.length; i++){
 
 // Add a "checked" symbol when clicking on a list item
 
+const list = document.querySelector('ul');
+list.addEventListener('click', (e) =>{
+    if(e.target.tagName === 'LI'){
+        e.target.classList.toggle('checked');
+    }
+});
 
 
 
