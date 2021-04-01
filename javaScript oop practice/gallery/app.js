@@ -26,6 +26,7 @@ function Gallery(element){
   this.closeModal = this.closeModal.bind(this);
   this.nextImage = this.nextImage.bind(this);
   this.prevImage = this.prevImage.bind(this);
+  this.chooseImage = this.chooseImage.bind(this);
   // container event
   this.container.addEventListener('click', function(e){
     // self.openModal()
@@ -45,7 +46,7 @@ Gallery.prototype.openModal = function(selectedImage, list){
   this.closeBtn.addEventListener('click', this.closeModal);
   this.nextBtn.addEventListener('click', this.nextImage);
   this.prevBtn.addEventListener('click', this.prevImage);
-
+  this.modalImages.addEventListener('click', this.chooseImage);
 }
 
 Gallery.prototype.setMainImage = function(selectedImage){
@@ -58,6 +59,7 @@ Gallery.prototype.closeModal = function(){
   this.closeBtn.removeEventListener('click', this.closeModal);
   this.nextBtn.removeEventListener('click', this.nextImage);
   this.prevBtn.removeEventListener('click', this.prevImage);
+  this.modalImages.removeEventListener('click', this.chooseImage);
 }
 
 Gallery.prototype.nextImage = function(){
@@ -67,6 +69,7 @@ Gallery.prototype.nextImage = function(){
     next.classList.add('selected');
     this.setMainImage(next)
 }
+
 Gallery.prototype.prevImage = function(){
   const selected = this.modalImages.querySelector('.selected');
     const prev = selected.previousElementSibling || this.modalImages.lastElementChild;
@@ -74,5 +77,15 @@ Gallery.prototype.prevImage = function(){
     prev.classList.add('selected');
     this.setMainImage(prev)
 }
+
+Gallery.prototype.chooseImage = function(e){
+  if(e.target.classList.contains('modal-img')){
+    const selected = this.modalImages.querySelector('.selected');
+    selected.classList.remove('selected');
+    this.setMainImage(e.target);
+    e.target.classList.add('selected');
+  }
+}
+
 const nature = new Gallery(getElement('.nature'));
 const city = new Gallery(getElement('.city'));
