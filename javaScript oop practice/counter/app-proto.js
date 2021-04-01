@@ -24,8 +24,6 @@ function Counter (element, value ){
     this.increaseBtn.addEventListener('click', this.increase);
     this.decreaseBtn.addEventListener('click', this.decrease);
     this.resetBtn.addEventListener('click', this.reset);
-
-
 }
 // btn fun
 Counter.prototype.increase = function(){
@@ -43,7 +41,6 @@ Counter.prototype.reset = function(){
     this.valueDOM.textContent = this.value;
 
 }
-
 
 const firstCounter = new Counter(getElement('.first-counter'),100);
 const secondCounter = new Counter(getElement('.second-counter'),200);
