@@ -50,7 +50,7 @@ Gallery.prototype.openModal = function(selectedImage, list){
 
 Gallery.prototype.setMainImage = function(selectedImage){
   this.modalImg.src = selectedImage.src;
-  this.imageName.texContent = selectedImage.title;
+  this.imageName.textContent = selectedImage.title;
 };
 
 Gallery.prototype.closeModal = function(){
@@ -61,10 +61,18 @@ Gallery.prototype.closeModal = function(){
 }
 
 Gallery.prototype.nextImage = function(){
-  
+    const selected = this.modalImages.querySelector('.selected');
+    const next = selected.nextElementSibling || this.modalImages.firstElementChild;
+    selected.classList.remove('selected')
+    next.classList.add('selected');
+    this.setMainImage(next)
 }
 Gallery.prototype.prevImage = function(){
-  
+  const selected = this.modalImages.querySelector('.selected');
+    const prev = selected.previousElementSibling || this.modalImages.lastElementChild;
+    selected.classList.remove('selected')
+    prev.classList.add('selected');
+    this.setMainImage(prev)
 }
 const nature = new Gallery(getElement('.nature'));
 const city = new Gallery(getElement('.city'));
